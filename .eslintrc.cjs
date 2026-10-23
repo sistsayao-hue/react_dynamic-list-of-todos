@@ -1,59 +1,65 @@
+
 module.exports = {
-env: {
-browser: true,
-es2024: true,
-node: true,
-},
+  root: true,
 
-parser: '@typescript-eslint/parser',
+  env: {
+    browser: true,
+    es2024: true,
+    node: true,
+  },
 
-parserOptions: {
-ecmaVersion: 'latest',
-sourceType: 'module',
-ecmaFeatures: {
-jsx: true,
-},
-},
+  parser: '@typescript-eslint/parser',
 
-settings: {
-react: {
-version: 'detect',
-},
-'import/resolver': {
-typescript: true,
-node: true,
-},
-},
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
 
-extends: [
-'plugin:react/recommended',
-'plugin:react-hooks/recommended',
-'airbnb-typescript',
-'plugin:@typescript-eslint/recommended',
-'plugin:import/recommended',
-'plugin:import/typescript',
-],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 
-rules: {
-// Desativa o erro de extensões nos imports
-'import/extensions': 'off',
+  extends: [
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'airbnb-typescript',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
 
-// Evita conflitos comuns com TypeScript
-'import/no-unresolved': 'off',
-'import/prefer-default-export': 'off',
-'import/no-extraneous-dependencies': 'off',
+  rules: {
+    // Corrige o erro parserServices
+    '@typescript-eslint/dot-notation': 'off',
 
-// React
-'react/react-in-jsx-scope': 'off',
-'react/prop-types': 'off',
+    // Imports sem extensões .ts e .tsx
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        ts: 'never',
+        tsx: 'never',
+        js: 'never',
+        jsx: 'never',
+      },
+    ],
 
-// TypeScript
-'@typescript-eslint/explicit-function-return-type': 'off',
-'@typescript-eslint/no-explicit-any': 'off',
-'@typescript-eslint/consistent-type-imports': 'off',
+    // Imports TypeScript
+    'import/no-unresolved': 'off',
 
-// Formatação e tamanho de linhas
-'max-len': 'off',
+    // React
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
 
-},
+    // TypeScript
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+
+    // Formatação
+    'max-len': 'off',
+  },
 };
