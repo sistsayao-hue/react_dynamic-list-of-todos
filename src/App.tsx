@@ -2,12 +2,12 @@
 import React from 'react';
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
-import { Todo } from './types/Todo.ts';
-import { getTodos } from './api.ts';
-import { TodoList } from './components/TodoList.tsx';
-import { TodoFilter } from './components/TodoFilter.tsx';
-import { TodoModal } from './components/TodoModal.tsx';
-import { Loader } from './components/Loader.tsx';
+import { Todo } from './types/Todo';
+import { getTodos } from './api';
+import { TodoList } from './components/TodoList';
+import { TodoFilter } from './components/TodoFilter';
+import { TodoModal } from './components/TodoModal';
+import { Loader } from './components/Loader';
 
 export const App: React.FC = () => {
   const [todos, setTodos] = React.useState<Todo[]>([]);
