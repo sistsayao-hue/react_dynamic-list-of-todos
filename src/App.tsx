@@ -4,9 +4,9 @@ import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import { Todo } from './types/Todo.ts';
 import { getTodos } from './api.ts';
-import { TodoList } from './components/TodoList.ts';
-import { TodoFilter } from './components/TodoFilter.ts';
-import { TodoModal } from './components/TodoModal.ts';
+import { TodoList } from './components/TodoList.tsx';
+import { TodoFilter } from './components/TodoFilter.tsx';
+import { TodoModal } from './components/TodoModal.tsx';
 import { Loader } from './components/Loader.tsx';
 
 export const App: React.FC = () => {
