@@ -55,26 +55,25 @@ module.exports = {
     'no-param-reassign': [2, { props: true }],
     'padding-line-between-statements': [
       2,
-      { blankLine: 'always', prev: '*', next: 'return' },
-      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+      { blankLine: 'always', prev: '', next: 'return' },
+      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '' },
       { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
-      { blankLine: 'always', prev: 'directive', next: '*' },
+      { blankLine: 'always', prev: 'directive', next: '' },
       { blankLine: 'always', prev: 'block-like', next: '*' },
     ],
-
     'implicit-arrow-linebreak': 0,
-
-  'import/extensions': [
-  'error',
-  'always',
-  {
-    ignorePackages: true,
-    js: 'always',
-    jsx: 'always',
-    ts: 'always',
-    tsx: 'always',
-  },
-],
+    // REMOVA ESSA PARTE ABAIXO:
+    // 'import/extensions': [
+    //   'error',
+    //   'always',
+    //   {
+    //     ignorePackages: true,
+    //     js: 'always',
+    //     jsx: 'always',
+    //     ts: 'always',
+    //     tsx: 'always',
+    //   },
+    // ],
     // React
     'react/prop-types': 0,
     'react/require-default-props': 0,
@@ -97,24 +96,22 @@ module.exports = {
     }],
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
-
     // Typescript
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/indent': ['error', 2],
     '@typescript-eslint/ban-types': ['error', {
-        extendDefaults: true,
-        types: {
-          '{}': false,
-        },
+      extendDefaults: true,
+      types: {
+        '{}': false,
       },
-    ],
+    }],
   },
   ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts', 'src/vite-env.d.ts', 'cypress'],
   settings: {
     react: {
-      version: 'detect',
+      version: '18.2',
     },
   },
 };
