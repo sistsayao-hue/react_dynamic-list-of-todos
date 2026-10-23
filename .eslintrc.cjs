@@ -1,12 +1,16 @@
 
 module.exports = {
-  root: true,
-
   env: {
     browser: true,
     es2024: true,
-    node: true,
   },
+
+  extends: [
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'airbnb-typescript',
+    'plugin:@typescript-eslint/eslint-recommended',
+  ],
 
   parser: '@typescript-eslint/parser',
 
@@ -18,48 +22,28 @@ module.exports = {
     },
   },
 
+  plugins: ['react', 'react-hooks', '@typescript-eslint'],
+
+  rules: {
+    // Desativa a regra que exige parserServices
+    '@typescript-eslint/no-implied-eval': 'off',
+
+    // Evita conflitos entre regras antigas e TypeScript
+    'no-implied-eval': 'off',
+
+    // Permite imports com ou sem extensão
+    'import/extensions': 'off',
+
+    // Mantém as regras de React
+    'react/react-in-jsx-scope': 'off',
+
+    // Permite imports de arquivos TypeScript
+    'import/no-unresolved': 'off',
+  },
+
   settings: {
     react: {
       version: 'detect',
     },
-  },
-
-  extends: [
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'airbnb-typescript',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
-
-  rules: {
-    // Corrige o erro parserServices
-    '@typescript-eslint/dot-notation': 'off',
-
-    // Imports sem extensões .ts e .tsx
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        ts: 'never',
-        tsx: 'never',
-        js: 'never',
-        jsx: 'never',
-      },
-    ],
-
-    // Imports TypeScript
-    'import/no-unresolved': 'off',
-
-    // React
-    'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off',
-
-    // TypeScript
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-
-    // Formatação
-    'max-len': 'off',
   },
 };
