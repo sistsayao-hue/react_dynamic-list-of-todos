@@ -4,7 +4,7 @@ import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import { Todo } from './types/Todo.ts';
 import { getTodos } from './api.ts';
-import { TodoList } from './components/TodoList.tsx';
+import { TodoList } from './components/TodoList.ts';
 import { TodoFilter } from './components/TodoFilter.ts';
 import { TodoModal } from './components/TodoModal.ts';
 import { Loader } from './components/Loader.tsx';
