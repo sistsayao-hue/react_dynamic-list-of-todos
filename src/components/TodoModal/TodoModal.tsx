@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Todo, User } from '../../types.ts';
+import { Todo, User } from '../../types';
 import { getUser } from '../../api';
 import { Loader } from '../Loader';
 interface TodoModalProps {
