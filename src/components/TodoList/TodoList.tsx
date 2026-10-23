@@ -1,6 +1,6 @@
 // src/components/TodoList/TodoList.tsx
 import React from 'react';
-import { Todo } from '../../types';
+import { Todo } from '../../types/Todo.tsx';
 import classNames from 'classnames';
 interface TodoListProps {
   todos: Todo[];
